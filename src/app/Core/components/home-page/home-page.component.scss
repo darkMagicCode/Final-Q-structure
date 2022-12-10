@@ -1,0 +1,95 @@
+@import '/src/app/styles.scss/styles/variables.scss';
+
+//***************************************** head path style *****************************************
+.head{
+    font-size: 2rem;
+    text-transform: capitalize;
+    padding-left: 3rem;  
+}
+.head1{
+    font-size: 1rem;
+    text-transform: capitalize;
+    padding-left: 3rem; 
+}
+//***************************************** side catgory filter *****************************************
+
+.parenthome{
+    display: flex;
+    .cateFilter{
+        margin: 0 3rem;
+        width: 25%;
+        .cateForm{
+            border: solid 1px $color_3_50 ;
+            text-transform: capitalize;
+            padding: $paddding_1;
+            font-family:'Open Sans ';
+    
+            .CateInput{
+                margin: 0.3rem 0.1rem ;
+            }
+        }
+    }
+}
+//***************************************** child selector *****************************************
+
+.childselector{
+    width: 75%;
+}
+//***************************************** pages  *****************************************
+
+.active{
+    background-color: $color_1;
+}
+
+.pages{
+    padding: .2rem $paddding_1;
+    margin: 1rem 0.5rem;
+    cursor: pointer;
+}
+.page{
+    text-align: center;
+    margin: 20px 0.5rem ;
+}
+//***************************************** media quary *****************************************
+
+@media (max-width: 768px){
+    .pages{
+        
+        padding: 5px $paddding_1;
+        // background-color: $color_1;
+        margin: 20px 0.1rem;
+        cursor: pointer;
+    }
+    .page{
+        text-align: center;
+        margin: 20px 0.5rem;
+    }
+    .cateFilter{
+        width: 100%;
+        .cateForm{
+            border: solid 1px $color_3_50 ;
+            text-transform: capitalize;
+            padding: $paddding_1;
+            
+        }
+    }
+    .childselector{
+        width: 90%;
+        margin: auto;
+    }
+    .cateFilter{
+        width: 100%;
+        padding: $paddding_1;
+        
+        .cateForm{
+            border: solid 1px $color_3_50 ;
+            text-transform: capitalize;
+            padding: $paddding_1;
+            
+        }
+    }
+    .parenthome{
+        display: flex;
+        flex-flow: row wrap;
+    }
+}

@@ -1,0 +1,39 @@
+<nav>
+  <div class="logoDiv">
+    <img
+      class="logo"
+      src="https://i.pinimg.com/originals/08/ed/95/08ed95044990042aa0177ef9a91c1efb.png"
+    />
+    <h2 routerLink="/home" class="cur">Home</h2>
+  </div>
+  <!--************************** search  ********************************* -->
+
+  <div class="searchDiv">
+    <input
+      *ngIf="isLoged"
+      type="search"
+      #value
+      (keyup)="typing(value.value)"
+      placeholder="search..."
+    />
+    <!--************************** cart count  ********************************* -->
+
+    <div *ngIf="isLoged" class="parentCountRelativ">
+      <img
+        class="hopecart"
+        src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
+        alt=""
+      />
+      <p class="childCountAbs">{{ count }}</p>
+    </div>
+    <!--************************** module  ********************************* -->
+
+    <h3 *ngIf="isLoged" class="accountModule" routerLink="/accSetting">Account</h3>
+    <img
+      class="barIcon"
+      src="https://cdn-icons-png.flaticon.com/512/56/56763.png"
+    />
+  </div>
+</nav>
+<hr />
+<router-outlet></router-outlet>

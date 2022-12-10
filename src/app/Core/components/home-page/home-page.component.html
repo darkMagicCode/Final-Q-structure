@@ -1,0 +1,45 @@
+<!----------------------------------------------- path in header -->
+
+<p *ngIf="!hideittem" class="head">Products</p>
+<p *ngIf="hideittem" class="head">{{ item }}</p>
+<p class="head1">
+  Home / Products / <span *ngIf="hideittem">{{ item }}</span>
+</p>
+
+<!-----------------------------------------------  side catgory filter -->
+
+<div class="parenthome">
+  <div class="cateFilter">
+    <form class="cateForm">
+      <p>Products</p>
+      <div *ngFor="let item of allCate">
+        <input
+          (click)="getcurrCate($event)"
+          type="checkbox"
+          [id]="item"
+          [name]="item"
+          [value]="item"
+          class="CateInput"
+        />
+        <label [for]="item"> {{ item }} ({{ 22 }})</label><br />
+      </div>
+    </form>
+  </div>
+  <!----------------------------------------------- child selector and pass data -->
+
+  <div class="childselector">
+    <app-single-product [allproductChild]="allProduct"></app-single-product>
+
+    <!-------------------------------------------------------*************** page count -->
+
+    <div class="page">
+      <a
+        class="pages"
+        *ngFor="let item of pageCounts; let i = index"
+        [ngClass]="{ active: i == changeColor }"
+        (click)="pagesNum(i * 9, i)"
+        >{{ i + 1 }}</a
+      >
+    </div>
+  </div>
+</div>

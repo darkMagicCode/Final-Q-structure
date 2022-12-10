@@ -1,0 +1,17 @@
+@import '/src/app/styles.scss/styles/variables.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+*{
+    box-sizing: border-box;
+   
+}
+body,html{
+    padding: 0px ;
+    margin: 0px ;
+    box-sizing: border-box;
+overflow-x: hidden;
+}
+.cur{
+    cursor: pointer;
+}

@@ -1,0 +1,76 @@
+<section>
+  <div class="formContainer">
+    <div>
+      <h2>Login With Your Account</h2>
+      <p>Welcome Back! Pleae Enter Your Details</p>
+
+      <!--************************** inputs with reactiveform form  ********************************* -->
+      <form
+        class="formBdy"
+        [formGroup]="registerForm"
+        (ngSubmit)="submitRegForm(registerForm)"
+      >
+        <div>
+          <!--************************** user name  ********************************* -->
+
+          <label for="username" class="label">Email</label>
+          <input
+            name="username"
+            formControlName="username"
+            class="inputName"
+            placeholder="username"
+            type="text"
+          />
+        </div>
+
+        <div
+          *ngIf="
+            registerForm.get('username')?.errors &&
+            registerForm.get('username')?.touched
+          "
+        >
+          <p>this user pattern is requird</p>
+        </div>
+        <!--************************** password  ********************************* -->
+
+        <div>
+          <label for="password " class="label">Password</label>
+          <input
+            class="inputName"
+            formControlName="password"
+            placeholder=" password"
+            type="password"
+          />
+        </div>
+
+        <div
+          *ngIf="
+            registerForm.get('password')?.errors &&
+            registerForm.get('password')?.touched
+          "
+        >
+          <p class="text-start text-capitalize">pattern password required</p>
+        </div>
+        <div>
+          <!--************************** buttom  ********************************* -->
+
+          <button
+            [disabled]="registerForm.invalid"
+            type="submit"
+            class="btnSub"
+          >
+            <p *ngIf="!loading">login</p>
+            <div *ngIf="loading" class="spinner">
+              <span class="spinner-inner-1"></span>
+              <span class="spinner-inner-2"></span>
+              <span class="spinner-inner-3"></span>
+            </div>
+          </button>
+        </div>
+        <p *ngIf="errorMes">
+          {{ errorMes }}
+        </p>
+      </form>
+    </div>
+  </div>
+</section>

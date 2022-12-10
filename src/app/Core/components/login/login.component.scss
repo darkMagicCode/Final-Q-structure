@@ -1,0 +1,37 @@
+@import '/src/app/styles.scss/styles/variables.scss';
+@import '/src/app/styles.scss/styles/spinner.scss';
+
+.formContainer{
+    text-align: center;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+
+    .formBdy{
+      padding: 1rem;
+        .inputName{
+          margin:0 0 1rem 0;
+          padding: .5rem 4rem .5rem .3rem;
+          background-color: transparent;
+           border: none;
+    }
+    }
+    .label{
+        display: block;
+        text-align: start;
+        padding: .5rem 0;
+    }
+    .btnSub{
+        margin: 1rem 0;
+        background-color: $color_1;
+        border: none;
+        padding: 0rem 6.5rem ;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+    }
+}
