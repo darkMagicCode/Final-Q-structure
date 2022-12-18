@@ -23,10 +23,6 @@
             text-transform: capitalize;
             padding: $paddding_1;
             font-family:'Open Sans ';
-    
-            .CateInput{
-                margin: 0.3rem 0.1rem ;
-            }
         }
     }
 }
@@ -42,9 +38,22 @@
 }
 
 .pages{
-    padding: .2rem $paddding_1;
-    margin: 1rem 0.5rem;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    //border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+    font-size: 0.875rem;
     cursor: pointer;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    &:hover 
+{
+        background-color: $color_1;
+      }
+    
 }
 .page{
     text-align: center;
@@ -56,7 +65,7 @@
     .pages{
         
         padding: 5px $paddding_1;
-        // background-color: $color_1;
+        background-color: $color_1;
         margin: 20px 0.1rem;
         cursor: pointer;
     }
@@ -70,6 +79,9 @@
             border: solid 1px $color_3_50 ;
             text-transform: capitalize;
             padding: $paddding_1;
+            width: 100%;
+       
+
             
         }
     }
@@ -85,11 +97,60 @@
             border: solid 1px $color_3_50 ;
             text-transform: capitalize;
             padding: $paddding_1;
-            
+            width: 350%;
+
         }
     }
     .parenthome{
         display: flex;
         flex-flow: row wrap;
     }
+}
+// <!-----------------------------------------------  side catgory filter -->
+.checkbox {
+    display: inline-block;
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 2px solid  $color_1;
+    margin-bottom: 5px;
+    cursor: pointer;
+
+    input[type="checkbox"] {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+  
+    .checkmark {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 0.5rem;
+      height: 0.5rem;
+      background-color: transparent;
+      border-radius: 50%;
+      transition: all 0.2s ease-in-out;
+    }
+  
+    input[type="checkbox"]:checked + .checkmark {
+      width: 0.6rem;
+      height: 0.6rem;
+      background-color: $color_1;
+      border: 2px solid $color_1;
+    }
+  }
+  .label{
+    position: absolute ;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+   
 }

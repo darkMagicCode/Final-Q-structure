@@ -11,17 +11,17 @@
     <!-- // *********------------ card body-----------******** -->
 
     <div class="card-body">
-      <h1>{{ item.title }}</h1>
+      <h1>{{ item.title | pdesc  }}</h1>
       <p>{{ item.description | pdesc }}</p>
       <p class="price">
         <span class="line-through">{{ item.price + "  USD" }}</span>
         <span>{{ (item.price - item.discountPercentage).toFixed(2) + " USD" }}</span>
       </p>
-      <h5><span class="font-light">Brand: </span>{{ item.brand }}</h5>
-      <h5><span class="font-light">Category: </span>{{ item.category }}</h5>
-      <h5><span class="font-light">In Stock: </span>{{ item.stock }}</h5>
+      <h5 ><span class="font-light">Brand: </span>{{ item.brand | pdesc  }}</h5>
+      <h5 ><span class="font-light">Category: </span>{{ item.category }}</h5>
+      <h5 ><span class="font-light">In Stock: </span>{{ item.stock }}</h5>
       <p class="rate">★{{ item.rating }} <span>(11)</span></p>
-      <button (click)="addProd()">Add to Cart</button>
     </div>
+    <button class="cur " (click)="addProd()">Add to Cart</button>
   </div>
 </main>

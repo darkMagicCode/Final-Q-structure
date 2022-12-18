@@ -13,15 +13,16 @@
     <form class="cateForm">
       <p>Products</p>
       <div *ngFor="let item of allCate">
-        <input
-          (click)="getcurrCate($event)"
+
+        <div class="checkbox" > 
+          <input type="checkbox" (click)="getcurrCate($event)"
           type="checkbox"
           [id]="item"
           [name]="item"
-          [value]="item"
-          class="CateInput"
-        />
-        <label [for]="item"> {{ item }} ({{ 22 }})</label><br />
+          [value]="item" />
+          <span class="checkmark"></span>
+        </div>
+        <label class="label" [for]="item">{{ item }} ({{ 22 }})</label>
       </div>
     </form>
   </div>
@@ -33,13 +34,25 @@
     <!-------------------------------------------------------*************** page count -->
 
     <div class="page">
+      <a class="pages" (click)="pagesNum(pageNumber -9, changeColor-1)"
+     ><span> &larr;</span></a>
+
       <a
-        class="pages"
-        *ngFor="let item of pageCounts; let i = index"
-        [ngClass]="{ active: i == changeColor }"
-        (click)="pagesNum(i * 9, i)"
-        >{{ i + 1 }}</a
+      class="pages"
+      
+      *ngFor="let item of pageCounts; let i = index"
+      
+      [ngClass]="{ active: i == changeColor }"
+      
+      (click)="pagesNum(i * 9, i)"
+      
+      >{{ i + 1 }}</a
+      
       >
+      <a class="pages"(click)="pagesNum(pageNumber +9,changeColor+1)">&rarr;</a>
     </div>
   </div>
 </div>
+
+
+

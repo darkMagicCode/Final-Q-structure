@@ -9,13 +9,17 @@
   <!--************************** search  ********************************* -->
 
   <div class="searchDiv">
-    <input
-      *ngIf="isLoged"
-      type="search"
-      #value
-      (keyup)="typing(value.value)"
-      placeholder="search..."
-    />
+   <div class="search-container">
+     <input
+       *ngIf="isLoged"
+       type="search"
+       #value
+       (keyup)="search(value.value)"
+       placeholder="search..."
+     />
+     <div class="search-icon">
+<img src="https://www.nicepng.com/png/full/350-3506490_search-icon-small-search-icon-small-png.png" alt="" srcset="">     </div>
+   </div>
     <!--************************** cart count  ********************************* -->
 
     <div *ngIf="isLoged" class="parentCountRelativ">

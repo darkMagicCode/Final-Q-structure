@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input,OnInit } from '@angular/core';
 import { Iproduct } from '../../../shared/interfaces/all-products';
 import { AllProductsService } from '../../service/all-products.service';
 
@@ -7,11 +7,14 @@ import { AllProductsService } from '../../service/all-products.service';
   templateUrl: './single-product.component.html',
   styleUrls: ['./single-product.component.scss'],
 })
-export class SingleProductComponent {
+export class SingleProductComponent implements OnInit {
 
   constructor(private _AllProductsService: AllProductsService) { }
   
-  // <!-- // *********------------ pass data to parent-----------******** -->
+  ngOnInit(): void {
+      
+  }
+  // <!-- // *********------------ take data from parent-----------******** -->
 
   @Input() allproductChild: Iproduct[] = [];
 
@@ -21,5 +24,5 @@ export class SingleProductComponent {
     this._AllProductsService.setcount();
   }
 
-  ngOnDestroy(): void {}
+  ngOnDestroy() {}
 }
